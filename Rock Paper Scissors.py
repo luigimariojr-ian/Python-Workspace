@@ -6,8 +6,6 @@ computerchoice = random.choice(computeroptions)
 print("Player: " + playerchoice + "!")
 print("Computer: " + computerchoice + "!")
 
-if playerchoice != "Rock" or playerchoice != "Paper" or playerchoice != "Scissors" or playerchoice != "rock" or playerchoice != "paper" or playerchoice != "scissors":
-    print("Invalid Input :(")
 
 if computerchoice == "Rock":
     if playerchoice == "Rock" or playerchoice == "rock":
@@ -30,3 +28,6 @@ if computerchoice == "Scissors":
         print("Computer Wins!")
     if playerchoice == "Scissors" or playerchoice == "scissors":
         print("Tie!")
+
+if playerchoice != "Rock" or playerchoice != "Paper" or playerchoice != "Scissors" or playerchoice != "rock" or playerchoice != "paper" or playerchoice != "scissors":
+    print("Invalid Input :(")

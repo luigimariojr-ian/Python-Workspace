@@ -1,6 +1,5 @@
 import random
 import os
-import time
 i = 1
 
 while i == 1: 
@@ -29,6 +28,12 @@ while i == 1:
     elif ans == password:
         os.system('cls')
         print("That's the same thing... I'll take it as a yes.")
+    elif ans == "password" or ans == "Password":
+        os.system('cls')
+        print("yep")
+    elif ans == "idk":
+        os.system('cls')
+        print("SO DO I! I'M CONTROLLED BY ALGORITHMS!")
     else:
         os.system('cls')
         print("Invalid Input, will continue")
