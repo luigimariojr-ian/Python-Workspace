@@ -8,15 +8,23 @@ snake.shape("square")
 apple = turtle.Turtle()
 apple.shape("circle")
 apple.color("#FFFFFF")
-segments = []
-speed = 3
+apple2 = turtle.Turtle()
+apple2.shape("circle")
+apple2.color("#FFFFFF")
+apple3 = turtle.Turtle()
+apple3.shape("circle")
+apple3.color("#FFFFFF")
 
 
 snake.up()
 apple.up()
+apple2.up()
+apple3.up()
 
 snake.goto(0, 0)
 apple.goto(200, 0)
+apple2.goto(200, 50)
+apple3.goto(200, -50)
 
 def left():
     snake.setheading(180)
@@ -45,7 +53,7 @@ screen.onkey(up, "Up")
 screen.onkey(down, "Down")
 
 while True:
-    snake.forward(speed)
+    snake.forward(3)
     if snake.xcor() < -450 or snake.xcor() > 450:
         result = turtle.Turtle()
         result.hideturtle()
@@ -63,29 +71,26 @@ while True:
         result.write("Game Over!", font=("Arial", 15, "normal"))
         break
     if snake.distance(apple) < 15:
-        newsegment = turtle.Turtle()
-        newsegment.shape("square")
-        newsegment.color("#888888")
-        newsegment.up()
-        segments.append(newsegment)
         score = score + 1
         scoreboard.clear()
         scoreboard.write("Score: " + str(score), font=("Arial", 15, "normal"))
         x = random.randint(-400, 400)
         y = random.randint(-350, 350)
         apple.goto(x, y)
-        speed = speed + 1
-
-
-    for i in range(len(segments) - 1, 0, -1):
-        x = segments[i - 1].xcor()
-        y = segments[i - 1].ycor()
-        segments [i].goto(x, y)
-    
-    if len(segments) > 0:
-        x = snake.xcor()
-        y = snake.ycor()
-        segments[0].goto(x, y)
+    if snake.distance(apple2) < 15:
+        score = score + 1
+        scoreboard.clear()
+        scoreboard.write("Score: " + str(score), font=("Arial", 15, "normal"))
+        x = random.randint(-400, 400)
+        y = random.randint(-350, 350)
+        apple2.goto(x, y)
+    if snake.distance(apple3) < 15:
+        score = score + 1
+        scoreboard.clear()
+        scoreboard.write("Score: " + str(score), font=("Arial", 15, "normal"))
+        x = random.randint(-400, 400)
+        y = random.randint(-350, 350)
+        apple3.goto(x, y)
 
 
 screen.mainloop()
