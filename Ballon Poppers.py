@@ -81,5 +81,25 @@ while True:
         score += 1
         scoreboard.clear()
         scoreboard.write("Score = " + str(score), font=(25))
+    if dart.distance(balloon3) < 15:
+        balloon3.goto(random.randint(-380, 380), random.randint(300, 380))
+        score -= 1
+        scoreboard.clear()
+        scoreboard.write("Score = " + str(score), font=(25))
+    if dart.distance(balloon32) < 15:
+        balloon32.goto(random.randint(-380, 380), random.randint(300, 380))
+        score -= 1
+        scoreboard.clear()
+        scoreboard.write("Score = " + str(score), font=(25))
+    if dart.distance(balloon1) < 15:
+        balloon1.goto(random.randint(-380, 380), random.randint(300, 380))
+        score *= 2
+        scoreboard.clear()
+        scoreboard.write("Score = " + str(score), font=(25))
+    if dart.distance(balloon2) < 15:
+        balloon2.goto(random.randint(-380, 380), random.randint(300, 380))
+        score /= 2
+        scoreboard.clear()
+        scoreboard.write("Score = " + str(score), font=(25))
 
 screen.mainloop()
